@@ -1,0 +1,163 @@
+main {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 60px;
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.rates-block {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.rates-blocks {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Карточка тарифа */
+.rates {
+  flex: 1;
+  min-width: 280px;
+  background-color: #4a7b2f;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.rates:hover {
+  transform: translateY(-5px);
+}
+
+/* FULL карточка - с зелёной рамкой */
+.rates:nth-child(2) {
+  background-color: #000;
+  border-color: #00ff00;
+  border-width: 4px;
+}
+
+/* Названия тарифов */
+.rate-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #00ff00;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Цена */
+.rate-title + h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: #00ff00;
+  text-align: center;
+}
+
+.rate-title + h2 del {
+  font-size: 1rem;
+  opacity: 0.6;
+  margin-right: 10px;
+}
+
+/* Список пунктов */
+.rate-points {
+  list-style: none;
+  margin: 20px 0;
+  padding-left: 0;
+}
+
+.rate-point {
+  position: relative;
+  padding-left: 25px;
+  margin: 12px 0;
+  font-size: 1rem;
+  color: white;
+  line-height: 1.4;
+}
+
+.rate-point::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #00ff00;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Кнопка купить */
+.buy-btn {
+  padding: 14px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
+}
+
+/* Стили для STANDART */
+.rates.standart {
+  background-color: #4a7b2f;
+  border: 2px solid transparent;
+}
+
+/* Стили для FULL */
+.rates.full {
+  background-color: #000;
+  border: 4px solid #00ff00;
+}
+
+/* Кнопка "Купить" для STANDART */
+.rates.standart .buy-btn {
+  background: white;
+  color: black;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Кнопка "Купить" для FULL */
+.rates.full .buy-btn {
+  background: transparent;
+  color: #00ff00;
+  border: 2px solid #00ff00;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.buy-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .rates-blocks {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rates {
+    min-width: 90%;
+    max-width: 320px;
+  }
+}
