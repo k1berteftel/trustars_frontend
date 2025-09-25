@@ -42,8 +42,8 @@ export default function PaymentModal({ rate, onClose }) {
   // Загружаем данные при открытии модалки
   useEffect(() => {
     const fetchPaymentData = async () => {
+      const webApp = window.Telegram.WebApp;
       try {
-        const webApp = window.Telegram.WebApp;
         const response = await fetch(`https://truststars.ru/api/payment?rate=${rate}&user_id=${webApp.initDataUnsafe.user.id}`);
         if (!response.ok) throw new Error("Не удалось загрузить данные оплаты");
 
@@ -63,7 +63,7 @@ export default function PaymentModal({ rate, onClose }) {
     };
 
     fetchPaymentData();
-  }, [rate, webApp]);
+  }, [rate]);
 
   // Поллинг статуса оплаты
   useEffect(() => {
