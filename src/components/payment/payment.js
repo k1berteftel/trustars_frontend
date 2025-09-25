@@ -63,7 +63,7 @@ export default function PaymentModal({ rate, onClose }) {
     };
 
     fetchPaymentData();
-  }, [rate]);
+  }, [rate, webApp]);
 
   // Поллинг статуса оплаты
   useEffect(() => {
