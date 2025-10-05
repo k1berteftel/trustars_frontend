@@ -1,6 +1,6 @@
 import Section from "../../widgets/section/section"
 import { datas } from "../../entities/data"
-import './main.css'
+//import './main.css'
 
 export default function Main() {
     let sections = datas.map(section => (

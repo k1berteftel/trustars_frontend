@@ -1,4 +1,4 @@
-import './title.css'
+//import './title.css'
 import headerStars from './header_stars.png';
 
 import { useNavigate } from 'react-router-dom';

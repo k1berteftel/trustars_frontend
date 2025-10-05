@@ -1,4 +1,4 @@
-import './section.css'
+//import './section.css'
 
 
 export default function Section({key, title, description}) {
