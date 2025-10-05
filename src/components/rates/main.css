@@ -244,3 +244,58 @@ main {
     min-height: 42px;
   }
 }
+
+/* ИСПРАВЛЕНИЯ ДЛЯ ВТОРОЙ СТРАНИЦЫ - ЦЕНТРИРОВАНИЕ */
+main {
+  margin: 0 auto; /* Добавьте это - центрирует контейнер */
+  box-sizing: border-box; /* Добавьте это */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Добавьте это */
+}
+
+.title {
+  text-align: center; /* Добавьте это */
+  width: 100%;
+}
+
+.rates-block {
+  width: 100%; /* Добавьте это */
+  display: flex;
+  justify-content: center; /* Добавьте это */
+}
+
+.rates-blocks {
+  justify-content: center; /* Убедитесь что это есть */
+  align-items: center; /* Добавьте это */
+}
+
+.rates {
+  margin: 0 auto; /* Добавьте это - центрирует карточки */
+}
+
+/* ОБНОВЛЕННЫЕ МОБИЛЬНЫЕ СТИЛИ ДЛЯ ВТОРОЙ СТРАНИЦЫ */
+@media (max-width: 768px) {
+  main {
+    margin: 0 auto; /* Добавьте это */
+    width: 100%;
+  }
+  
+  .rates-blocks {
+    align-items: center; /* Добавьте это */
+    padding: 0 15px; /* Добавьте отступы */
+    width: calc(100% - 30px); /* Учитываем padding */
+  }
+  
+  .rates {
+    margin: 0; /* Добавьте это */
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .rates-blocks {
+    padding: 0 10px; /* Добавьте это */
+    width: calc(100% - 20px); /* Учитываем padding */
+  }
+}
