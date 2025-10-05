@@ -44,7 +44,7 @@ export default function PaymentModal({ rate, onClose }) {
     const fetchPaymentData = async () => {
       const webApp = window.Telegram.WebApp;
       try {
-        const response = await fetch(`https://truststars.ru/api/payment?rate=${rate}&user_id=${webApp.initDataUnsafe.user.id}`);
+        const response = await fetch(`https://truststars.ru/webapp/payment?rate=${rate}&user_id=${webApp.initDataUnsafe.user.id}`);
         if (!response.ok) throw new Error("Не удалось загрузить данные оплаты");
 
         const data = await response.json();
@@ -71,7 +71,7 @@ export default function PaymentModal({ rate, onClose }) {
 
     const intervalId = setInterval(async () => {
       try {
-        const response = await fetch(`https://truststars.ru/api/status?order_id=${paymentData.id}`);
+        const response = await fetch(`https://truststars.ru/webapp/status?order_id=${paymentData.id}`);
         if (!response.ok) throw new Error("Не удалось проверить статус");
 
         const data = await response.json();
