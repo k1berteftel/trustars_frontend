@@ -8,127 +8,215 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 16px;
+  padding: 8px;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .App {
   width: 100%;
-  max-width: 800px;
+  max-width: 100%;
   text-align: center;
-  padding: 20px 16px;
+  padding: 10px 8px;
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
 }
 
-/* Мобильные стили */
-@media (max-width: 768px) {
+/* Базовые стили для мобильных */
+header {
+  margin-bottom: 25px;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 5px;
+  box-sizing: border-box;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 auto 20px auto;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.7));
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.stars img {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  line-height: 1.3;
+  text-align: center;
+  width: 100%;
+  padding: 0 5px;
+  box-sizing: border-box;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.redirect-btn {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #a9c34a;
+  background: rgba(169, 195, 74, 0.1);
+  border: 2px solid #a9c34a;
+  outline: none;
+  cursor: pointer;
+  padding: 12px 20px;
+  border-radius: 25px;
+  margin: 0 auto;
+  display: block;
+  width: 90%;
+  max-width: 250px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+main {
+  margin-top: 25px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 5px;
+}
+
+main h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 0 8px;
+  box-sizing: border-box;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  gap: 15px;
+  margin-top: 15px;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.section {
+  width: 100%;
+  background: linear-gradient(135deg, #5d8b2f, #4a7b2f);
+  border-radius: 12px;
+  padding: 15px 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+}
+
+.section-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: white;
+  text-align: center;
+  line-height: 1.3;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.section-description {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.9);
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.section-description ul {
+  list-style: none;
+  margin: 10px 0;
+  padding-left: 0;
+}
+
+.section-description li {
+  margin: 6px 0;
+  padding-left: 16px;
+  position: relative;
+  word-break: break-word;
+}
+
+.section-description li::before {
+  content: "•";
+  color: #a9c34a;
+  font-size: 1rem;
+  position: absolute;
+  left: 0;
+  top: -1px;
+}
+
+/* Стили для планшетов */
+@media (min-width: 481px) and (max-width: 768px) {
   body {
     padding: 12px;
   }
   
   .App {
-    padding: 20px 12px;
-  }
-
-  header {
-    margin-bottom: 40px;
+    padding: 20px 15px;
   }
 
   .stars {
     gap: 12px;
-    margin-bottom: 30px;
-  }
-
-  .stars img {
-    width: 50px;
-    height: 50px;
-  }
-
-  .title {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-    line-height: 1.3;
-    letter-spacing: 0.3px;
-    padding: 0 10px;
-  }
-
-  .redirect-btn {
-    font-size: 1rem;
-    padding: 16px 32px;
-    min-height: 48px; /* Минимальная высота для удобного касания */
-    border: 2px solid transparent; /* Добавляем границу для лучшей видимости */
-  }
-
-  .redirect-btn::after {
-    height: 2px; /* Тонкая линия для мобильных */
-  }
-
-  main {
-    margin-top: 40px;
-  }
-
-  main h2 {
-    font-size: 1.4rem;
-    margin-bottom: 30px;
-    letter-spacing: 0.5px;
-    padding: 0 15px;
-    line-height: 1.3;
-  }
-
-  .items {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    margin-top: 20px;
-    padding: 0 10px;
-  }
-  
-  .section {
-    width: 100%;
-    max-width: 100%;
-    min-width: unset;
-    padding: 20px;
-    margin: 0 auto;
-  }
-
-  .section-title {
-    font-size: 1rem;
-    margin-bottom: 15px;
-  }
-
-  .section-description {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    text-align: left;
-  }
-}
-
-/* Стили для очень маленьких экранов */
-@media (max-width: 480px) {
-  .stars img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .title {
-    font-size: 1rem;
     margin-bottom: 25px;
   }
 
+  .stars img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    padding: 0 15px;
+  }
+
   .redirect-btn {
-    font-size: 0.9rem;
-    padding: 14px 28px;
+    font-size: 1rem;
+    padding: 14px 25px;
+    max-width: 280px;
   }
 
   main h2 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    margin-bottom: 25px;
   }
-
+  
   .section {
-    padding: 16px;
+    padding: 18px 15px;
+    border-radius: 14px;
   }
 
   .section-title {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   .section-description {
@@ -136,195 +224,135 @@ body {
   }
 }
 
-/* Базовые стили (остаются без изменений) */
-header {
-  margin-bottom: 80px;
-  text-align: center;
-}
-
-.stars {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: auto;
-  margin-bottom: 40px;
-  filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.7));
-}
-
-.stars img {
-  width: 80px;
-  height: 80px;
-  transition: transform 0.3s ease;
-}
-
-.stars img:hover {
-  transform: scale(1.1);
-}
-
-.title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 40px;
-  line-height: 1.4;
-  letter-spacing: 0.5px;
-}
-
-.redirect-btn {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #a9c34a;
-  background: none;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  position: relative;
-  padding: 14px 40px;
-  border-radius: 50px;
-  transition: color 0.3s ease;
-  padding-bottom: 8px;
-}
-
-.redirect-btn::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 3px;
-  background: #a9c34a;
-  transition: width 0.3s ease;
-}
-
-.redirect-btn:hover {
-  color: #c8d65e;
-}
-
-.redirect-btn:hover::after {
-  width: 100%;
-}
-
-main {
-  margin-top: 60px;
-}
-
-main h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 40px;
-  letter-spacing: 1px;
-  color: white;
-}
-
-.items {
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
-  flex-direction: row;
-  gap: 20px;
-  margin-top: 30px;
-}
-
-.section {
-  flex: 1;
-  min-width: 240px;
-  background-color: #5d8b2f;
-  border-radius: 16px;
-  padding: 25px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  color: white;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
-}
-
-.section-title {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: white;
-}
-
-.section-description {
-  font-size: 1rem;
-  line-height: 1.6;
-  text-align: left;
-}
-
-.section-description ul {
-  list-style: disc;
-  margin: 10px 0;
-  padding-left: 16px;
-}
-
-.section-description li {
-  margin: 8px 0;
-}
-
-/* ИСПРАВЛЕНИЯ ДЛЯ ПЕРВОЙ СТРАНИЦЫ - ЦЕНТРИРОВАНИЕ */
-.App {
-  margin: 0 auto; /* Добавьте это - центрирует контейнер */
-  box-sizing: border-box; /* Добавьте это */
-}
-
-header {
-  width: 100%; /* Добавьте это */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Добавьте это */
-}
-
-.stars {
-  margin-left: auto; /* Добавьте это */
-  margin-right: auto; /* Добавьте это */
-}
-
-.redirect-btn {
-  margin: 0 auto; /* Добавьте это - центрирует кнопку */
-  display: block; /* Добавьте это */
-}
-
-main {
-  width: 100%; /* Добавьте это */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Добавьте это */
-}
-
-.items {
-  width: 100%; /* Добавьте это */
-  justify-content: center; /* Убедитесь что это есть */
-}
-
-/* ОБНОВЛЕННЫЕ МОБИЛЬНЫЕ СТИЛИ ДЛЯ ПЕРВОЙ СТРАНИЦЫ */
-@media (max-width: 768px) {
+/* Стили для десктопов */
+@media (min-width: 769px) {
+  body {
+    padding: 20px;
+  }
+  
   .App {
-    margin: 0 auto; /* Добавьте это */
-    width: 100%;
+    max-width: 1200px;
+    padding: 40px 20px;
   }
-  
+
+  header {
+    margin-bottom: 50px;
+    padding: 0 20px;
+  }
+
+  .stars {
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .stars img {
+    width: 80px;
+    height: 80px;
+  }
+
   .title {
-    text-align: center; /* Добавьте это */
-    width: 100%;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    line-height: 1.3;
+    letter-spacing: 0.5px;
+    padding: 0 20px;
+    max-width: 800px;
   }
-  
+
+  .redirect-btn {
+    font-size: 1.2rem;
+    padding: 16px 45px;
+    max-width: 350px;
+    min-height: 60px;
+    border-width: 3px;
+    transition: all 0.3s ease;
+  }
+
+  .redirect-btn:hover {
+    background: rgba(169, 195, 74, 0.2);
+    transform: translateY(-2px);
+  }
+
+  main {
+    margin-top: 60px;
+    padding: 0 20px;
+    max-width: 1000px;
+  }
+
+  main h2 {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+    padding: 0 20px;
+  }
+
   .items {
-    align-items: center; /* Добавьте это */
-    padding: 0 15px; /* Увеличьте отступы */
-    width: calc(100% - 30px); /* Учитываем padding */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+    max-width: 1000px;
   }
   
   .section {
-    margin: 0; /* Добавьте это */
-    width: 100%;
+    flex: 1;
+    min-width: 300px;
+    max-width: 320px;
+    padding: 30px 25px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  .section-description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .section-description li {
+    margin: 10px 0;
+    padding-left: 25px;
+  }
+
+  .section-description li::before {
+    font-size: 1.3rem;
   }
 }
 
-@media (max-width: 480px) {
+/* Для очень больших экранов */
+@media (min-width: 1201px) {
+  .App {
+    max-width: 1400px;
+  }
+  
   .items {
-    padding: 0 10px; /* Добавьте это */
-    width: calc(100% - 20px); /* Учитываем padding */
+    max-width: 1200px;
+  }
+  
+  .section {
+    min-width: 350px;
+    max-width: 380px;
+  }
+}
+
+/* Убираем hover эффекты для тач-устройств */
+@media (hover: none) {
+  .redirect-btn:hover {
+    transform: none;
+    background: rgba(169, 195, 74, 0.1);
+  }
+  
+  .section:hover {
+    transform: none;
   }
 }

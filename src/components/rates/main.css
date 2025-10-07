@@ -3,6 +3,8 @@ main {
   max-width: 800px;
   text-align: center;
   padding: 20px 16px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .title {
@@ -13,13 +15,15 @@ main {
   color: white;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
   line-height: 1.2;
+  text-align: center;
+  width: 100%;
 }
 
 .rates-block {
   display: flex;
   justify-content: center;
-  gap: 20px;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .rates-blocks {
@@ -31,6 +35,7 @@ main {
   padding: 0;
   margin: 0;
   width: 100%;
+  box-sizing: border-box;
 }
 
 /* Карточка тарифа */
@@ -44,6 +49,7 @@ main {
   transition: transform 0.3s ease;
   border: 2px solid transparent;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .rates:hover {
@@ -51,7 +57,7 @@ main {
 }
 
 /* FULL карточка - с зелёной рамкой */
-.rates:nth-child(2) {
+.rates.full {
   background-color: #000;
   border-color: #00ff00;
   border-width: 3px;
@@ -157,6 +163,17 @@ main {
   transform: scale(1.02);
 }
 
+/* Десктопная версия */
+@media (min-width: 769px) {
+  .rates-blocks {
+    flex-direction: row;
+  }
+  
+  .rates {
+    max-width: 320px;
+  }
+}
+
 /* Мобильная адаптивность */
 @media (max-width: 768px) {
   main {
@@ -167,7 +184,7 @@ main {
     font-size: 1.6rem;
     margin-bottom: 30px;
     letter-spacing: 0.5px;
-    padding: 0 10px;
+    padding: 0 15px;
   }
 
   .rates-block {
@@ -178,6 +195,7 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 16px;
+    padding: 0 15px;
   }
 
   .rates {
@@ -185,7 +203,7 @@ main {
     max-width: 100%;
     width: 100%;
     padding: 20px;
-    margin: 0 auto;
+    margin: 0;
   }
 
   .rate-title {
@@ -218,6 +236,11 @@ main {
   .title {
     font-size: 1.4rem;
     margin-bottom: 25px;
+    padding: 0 10px;
+  }
+
+  .rates-blocks {
+    padding: 0 10px;
   }
 
   .rates {
@@ -242,60 +265,5 @@ main {
     font-size: 0.95rem;
     padding: 12px 16px;
     min-height: 42px;
-  }
-}
-
-/* ИСПРАВЛЕНИЯ ДЛЯ ВТОРОЙ СТРАНИЦЫ - ЦЕНТРИРОВАНИЕ */
-main {
-  margin: 0 auto; /* Добавьте это - центрирует контейнер */
-  box-sizing: border-box; /* Добавьте это */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Добавьте это */
-}
-
-.title {
-  text-align: center; /* Добавьте это */
-  width: 100%;
-}
-
-.rates-block {
-  width: 100%; /* Добавьте это */
-  display: flex;
-  justify-content: center; /* Добавьте это */
-}
-
-.rates-blocks {
-  justify-content: center; /* Убедитесь что это есть */
-  align-items: center; /* Добавьте это */
-}
-
-.rates {
-  margin: 0 auto; /* Добавьте это - центрирует карточки */
-}
-
-/* ОБНОВЛЕННЫЕ МОБИЛЬНЫЕ СТИЛИ ДЛЯ ВТОРОЙ СТРАНИЦЫ */
-@media (max-width: 768px) {
-  main {
-    margin: 0 auto; /* Добавьте это */
-    width: 100%;
-  }
-  
-  .rates-blocks {
-    align-items: center; /* Добавьте это */
-    padding: 0 15px; /* Добавьте отступы */
-    width: calc(100% - 30px); /* Учитываем padding */
-  }
-  
-  .rates {
-    margin: 0; /* Добавьте это */
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .rates-blocks {
-    padding: 0 10px; /* Добавьте это */
-    width: calc(100% - 20px); /* Учитываем padding */
   }
 }

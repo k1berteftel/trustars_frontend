@@ -8,11 +8,11 @@
   background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; /* Всегда центрируем по вертикали и горизонтали */
   z-index: 1000;
   backdrop-filter: blur(4px);
   animation: fadeIn 0.3s ease;
-  padding: 16px;
+  padding: 20px;
   box-sizing: border-box;
 }
 
@@ -34,8 +34,9 @@
   transform: translateY(0);
   animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   border: 1px solid rgba(0, 0, 0, 0.05);
-  max-height: 90vh;
+  max-height: 85vh;
   overflow-y: auto;
+  margin: 0; /* Убираем любые margin */
 }
 
 @keyframes slideUp {
@@ -248,11 +249,28 @@ hr {
   box-shadow: 0 6px 16px rgba(229, 62, 62, 0.3);
 }
 
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: 16px;
+    align-items: center; /* Важно: центрируем по вертикали */
+  }
+  
+  .modal-content {
+    max-height: 80vh; /* Немного уменьшаем максимальную высоту */
+  }
+}
+
 /* Адаптивность для очень маленьких экранов */
-@media (max-width: 360px) {
+@media (max-width: 480px) {
+  .modal-overlay {
+    padding: 12px;
+  }
+  
   .modal-content {
     padding: 20px;
     border-radius: 16px;
+    max-height: 85vh;
   }
 
   .modal-header h3 {
@@ -273,5 +291,15 @@ hr {
     width: 28px;
     height: 28px;
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .modal-overlay {
+    padding: 8px;
+  }
+  
+  .modal-content {
+    padding: 16px;
   }
 }
